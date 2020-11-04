@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 30</title>
+    <style>
+        body{
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .keys-1,
+        .keys-2, .keys-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .key {
+            border: 4px solid black;
+            border-radius: 5px;
+            margin: .5rem;
+            font-size: 1rem;
+            padding: 1rem; 
+            transition: all .07s;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            color: white;
+            background-color: black;
+            text-shadow: 0 0 5px black;
+        }
+
+        
+
+        .playing {
+            transform: scale(1.1);
+            border-color: #ffc600;
+            box-shadow: 0 0 10px #ffc600;
+        }
+
+        kbd {
+            display: block;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="keys-1">
+        <div data-key="81" class="key">
+            <kbd>Q</kbd>
+            <span class="sound">rrrou</span>
+        </div>
+        <div data-key="87" class="key">
+            <kbd>W</kbd>
+            <span class="sound">ohhh</span>
+        </div>
+        <div data-key="69" class="key">
+            <kbd>E</kbd>
+            <span class="sound">seriously</span>
+        </div>
+        <div data-key="82" class="key">
+            <kbd>R</kbd>
+            <span class="sound">please</span>
+        </div>
+        <div data-key="84" class="key">
+            <kbd>T</kbd>
+            <span class="sound">okay</span>
+        </div>
+        <div data-key="89" class="key">
+            <kbd>Y</kbd>
+            <span class="sound">OMG</span>
+        </div>
+        <div data-key="85" class="key">
+            <kbd>U</kbd>
+            <span class="sound">presi</span>
+        </div>
+        <div data-key="73" class="key">
+            <kbd>I</kbd>
+            <span class="sound">shhhh</span>
+        </div>
+        <div data-key="79" class="key">
+            <kbd>O</kbd>
+            <span class="sound">sigh</span>
+        </div>
+        <div data-key="80" class="key">
+            <kbd>P</kbd>
+            <span class="sound">uhhhhh</span>
+        </div>
+    </div>
+    <div class="keys-2">
+        <div data-key="65" class="key">
+            <kbd>A</kbd>
+            <span class="sound">clap</span>
+        </div>
+        <div data-key="83" class="key">
+            <kbd>S</kbd>
+            <span class="sound">hihat</span>
+        </div>
+        <div data-key="68" class="key">
+            <kbd>D</kbd>
+            <span class="sound">kick</span>
+        </div>
+        <div data-key="70" class="key">
+            <kbd>F</kbd>
+            <span class="sound">openhat</span>
+        </div>
+        <div data-key="71" class="key">
+            <kbd>G</kbd>
+            <span class="sound">boom</span>
+        </div>
+        <div data-key="72" class="key">
+            <kbd>H</kbd>
+            <span class="sound">ride</span>
+        </div>
+        <div data-key="74" class="key">
+            <kbd>J</kbd>
+            <span class="sound">snare</span>
+        </div>
+        <div data-key="75" class="key">
+            <kbd>K</kbd>
+            <span class="sound">tom</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>L</kbd>
+            <span class="sound">tink</span>
+        </div>
+    </div>
+    <div class="keys-3">
+        <div data-key="90" class="key">
+            <kbd>Z</kbd>
+            <span class="sound">woohoo</span>
+        </div>
+        <div data-key="88" class="key">
+            <kbd>X</kbd>
+            <span class="sound">wow</span>
+        </div>
+        <div data-key="67" class="key">
+            <kbd>C</kbd>
+            <span class="sound">yay</span>
+        </div>
+        <div data-key="86" class="key">
+            <kbd>V</kbd>
+            <span class="sound">yeah</span>
+        </div>
+        <div data-key="86" class="key">
+            <kbd>B</kbd>
+            <span class="sound">shit</span>
+        </div>
+        <div data-key="78" class="key">
+            <kbd>N</kbd>
+            <span class="sound">shut-up</span>
+        </div>
+        <div data-key="78" class="key">
+            <kbd>M</kbd>
+            <span class="sound">hahaha</span>
+        </div>
+    </div>
+
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+    <audio data-key="81" src="sounds/rrrou.wav"></audio>
+    <audio data-key="87" src="sounds/ooooh.wav"></audio>
+    <audio data-key="69" src="sounds/seriously.wav"></audio>
+    <audio data-key="82" src="sounds/please.wav"></audio>
+    <audio data-key="84" src="sounds/okay.wav"></audio>
+    <audio data-key="89" src="sounds/oh-my-god.wav"></audio>
+    <audio data-key="85" src="sounds/presi.wav"></audio>
+    <audio data-key="73" src="sounds/shh.wav"></audio>
+    <audio data-key="79" src="sounds/sigh.wav"></audio>
+    <audio data-key="80" src="sounds/uhhh.wav"></audio>
+    <audio data-key="90" src="sounds/woo.wav"></audio>
+    <audio data-key="67" src="sounds/yay.wav"></audio>
+    <audio data-key="86" src="sounds/yeah.wav"></audio>
+    <audio data-key="66" src="sounds/shit.wav"></audio>
+    <audio data-key="78" src="sounds/shut-up.wav"></audio>
+    <audio data-key="77" src="sounds/yes-hahahaa.wav"></audio>
+
+    <script>
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if (!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+            key.classList.add('playing');
+        }
+
+
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return;
+            this.classList.remove('playing');
+        }
+
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+        window.addEventListener("keydown", playSound)
+    </script>
+</body>
+
+</html>
